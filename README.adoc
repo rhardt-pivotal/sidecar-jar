@@ -1,4 +1,4 @@
-# Sidecar Ruby Demo
+# Sidecar Buildpack Spring Boot Jar
 
 [[img-sidecar]]
 image::https://upload.wikimedia.org/wikipedia/commons/c/c2/Bundesarchiv_Bild_102-12561,_Berlin,_Fahrrad_mit_Beiwagen.jpg[Sidecar]

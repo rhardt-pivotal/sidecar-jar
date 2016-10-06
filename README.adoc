@@ -1,0 +1,35 @@
+# Sidecar Ruby Demo
+
+[[img-sidecar]]
+image::https://upload.wikimedia.org/wikipedia/commons/c/c2/Bundesarchiv_Bild_102-12561,_Berlin,_Fahrrad_mit_Beiwagen.jpg[Sidecar]
+
+This is the Spring Boot application that provides the 'sidecar' funtcionality to the https://github.com/rhardt-pivotal/sidecar-buildpack[Sidecar Buildpack]
+
+## Usage
+* build
++
+----
+mvn clean package
+----
++
+* Copy into your local copy of sidecar-buildpack
++
+----
+cp ./target/sidecar-0.0.1-SNAPSHOT.jar ${SIDECAR_BUILDPACK}/resources/sidecar/sidecar.jar
+----
++
+
+
+## Details
+This is a simple Spring Boot application that
+
+* discovers a Eureka Server
+* registers its client app with that server
+* exposes all other Eureka-registered services locally via a https://github.com/Netflix/zuul[Zuul] proxy on http://localhost:8087/<service_name>
+
+## More Info
+http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
+
+
+
+This is part of a suite of demos for the https://github.com/rhardt-pivotal/sidecar-buildpack[Sidecar Buildpack]

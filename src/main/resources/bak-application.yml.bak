@@ -8,10 +8,6 @@ spring:
     config:
       enabled: true
 
-security:
-  basic:
-    enabled: false
-
 sidecar:
   port: ${port:8085}
   health-uri: http://localhost:${sidecar.port}/${sidecar.health.context:health}

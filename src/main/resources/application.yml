@@ -1,0 +1,30 @@
+server:
+  port: ${eureka.port:8087}
+
+spring:
+  application:
+    name: ${vcap.application.application_name:unknown_sidecar_app}
+  cloud:
+    config:
+      enabled: true
+
+sidecar:
+  port: ${port:8085}
+  health-uri: http://localhost:${sidecar.port}/${sidecar.health.context:health}
+  home-page-uri: http://localhost:${sidecar.port}/
+
+ribbon:
+  IsSecure: false
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.service-registry.credentials.uri:http://127.0.0.1:8761}/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    secure-port-enabled: false
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+logging:
+  level: DEBUG

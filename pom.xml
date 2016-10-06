@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.pivotal.pa.poc</groupId>
+	<artifactId>sidecar</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sidecar</name>
+	<description>Sidecar jar for non-java apps to access SCS</description>
+
+	<parent>
+		<groupId>io.pivotal.spring.cloud</groupId>
+		<artifactId>spring-cloud-services-starter-parent</artifactId>
+		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<relativePath/>
+		<!-- lookup parent from repository -->
+	</parent>
+
+	<!--<repositories>-->
+		<!--<repository>-->
+			<!--<id>central</id>-->
+			<!--<url>https://repo1.maven.org/maven2</url>-->
+			<!--<releases>-->
+				<!--<enabled>true</enabled>-->
+			<!--</releases>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>repo1</id>-->
+			<!--<name>repo1</name>-->
+			<!--<url>https://repo.spring.io/release/</url>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>repo2</id>-->
+			<!--<name>repo2</name>-->
+			<!--<url>http://repo.spring.io/libs-snapshot-local</url>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>repo3</id>-->
+			<!--<name>repo3</name>-->
+			<!--<url>http://repo.spring.io/libs-milestone-local</url>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>repo4</id>-->
+			<!--<name>repo4</name>-->
+			<!--<url>http://repo.spring.io/libs-release-local</url>-->
+		<!--</repository>-->
+	<!--</repositories>-->
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-netflix-sidecar</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

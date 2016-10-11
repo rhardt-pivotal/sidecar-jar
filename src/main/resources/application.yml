@@ -1,12 +1,12 @@
 server:
-  port: ${eureka.port:8087}
+  port: ${sidecar.proxy.port:8087}
 
 spring:
   application:
     name: ${vcap.application.application_name:unknown_sidecar_app}
   cloud:
-    config:
-      enabled: true
+    services:
+      registrationMethod: route
 
 security:
   basic:
